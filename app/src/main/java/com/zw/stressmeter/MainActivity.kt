@@ -15,6 +15,11 @@ import com.zw.stressmeter.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    /*
+    * Navigation view, frame layout and fragment.replace() ? , gridview , no alarm
+    * */
+
+
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
@@ -34,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery
+                R.id.nav_home, R.id.nav_results
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
