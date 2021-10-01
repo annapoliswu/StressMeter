@@ -18,7 +18,7 @@ import android.util.DisplayMetrics
 
 class ImageAdapter(applicationContext: Context, images: Array<Int>) : BaseAdapter() {
     private lateinit var context: Context
-    private lateinit var images: Array<Int>
+    public lateinit var images: Array<Int>
     private var screenWidth : Int
 
     init {
@@ -51,5 +51,6 @@ class ImageAdapter(applicationContext: Context, images: Array<Int>) : BaseAdapte
 
         return imageView
     }
+
 
 }
