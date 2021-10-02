@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class ResultsViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is results Fragment"
+        value = "Graph showing your stress levels"
     }
     val text: LiveData<String> = _text
 }
