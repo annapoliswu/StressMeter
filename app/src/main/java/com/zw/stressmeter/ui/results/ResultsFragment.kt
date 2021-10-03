@@ -85,7 +85,7 @@ class ResultsFragment : Fragment() {
         chart.lineChartData = data
 
         //chart viewport adjustment so y-axis is not cut off
-        var vp = Viewport(chart.maximumViewport);
+        val vp = Viewport(chart.maximumViewport);
         vp.top = vp.top + 4
         chart.maximumViewport = vp
         chart.currentViewport = vp
@@ -102,9 +102,9 @@ class ResultsFragment : Fragment() {
         Formats row, adds a row and line separator to table
      */
     fun addTableRow(table:TableLayout, strings:Array<String>){
-        var tableRow =  TableRow(context)
-        var c1 = TextView(context)
-        var c2 = TextView(context)
+        val tableRow =  TableRow(context)
+        val c1 = TextView(context)
+        val c2 = TextView(context)
         c1.text = strings[0]
         c2.text = strings[1]
         c1.setPadding(50,20,50,20)
@@ -112,7 +112,7 @@ class ResultsFragment : Fragment() {
         tableRow.addView(c1)
         tableRow.addView(c2)
 
-        var hLine = View(context)
+        val hLine = View(context)
         hLine.layoutParams = TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, 1)
         hLine.setBackgroundColor(Color.parseColor("#000000"))
 
