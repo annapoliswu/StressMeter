@@ -6,7 +6,9 @@ import android.widget.*
 import android.util.DisplayMetrics
 
 
-
+/**
+ * Handles display for images in grid
+ */
 class ImageAdapter(applicationContext: Context) : BaseAdapter() {
     private var context: Context
     var images: Array<Int>
@@ -29,6 +31,7 @@ class ImageAdapter(applicationContext: Context) : BaseAdapter() {
         R.drawable.psm_running3,
         R.drawable.psm_neutral_child,
         R.drawable.psm_headache2)
+
     private val grid2 = arrayOf(
         R.drawable.psm_mountains11,
         R.drawable.psm_wine3,
@@ -46,6 +49,7 @@ class ImageAdapter(applicationContext: Context) : BaseAdapter() {
         R.drawable.psm_lawn_chairs3,
         R.drawable.psm_to_do_list3,
         R.drawable.psm_work4)
+
     private val grid3 = arrayOf(
         R.drawable.psm_talking_on_phone2,
         R.drawable.psm_stressed_person,
@@ -67,10 +71,8 @@ class ImageAdapter(applicationContext: Context) : BaseAdapter() {
     init {
         this.context = applicationContext
         this.images = grid1
-
         val metrics: DisplayMetrics = context.getResources().getDisplayMetrics()
         screenWidth = metrics.widthPixels
-
     }
 
 
@@ -90,12 +92,17 @@ class ImageAdapter(applicationContext: Context) : BaseAdapter() {
         val imageView = ImageView(context)
         imageView.setImageResource(images[position])
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP)
+
+        //sets imageView to be a square
         val imageDim = (screenWidth)/4
         imageView.layoutParams = AbsListView.LayoutParams(imageDim,imageDim)
 
         return imageView
     }
 
+    /**
+     * Changes which predefined array of images will be displayed in grid
+     */
     fun changeGrid(gridNum : Int){
         when(gridNum){
             0 -> images = grid1

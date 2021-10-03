@@ -35,7 +35,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        //set-up
+        //Locating views
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
@@ -45,7 +45,7 @@ class HomeFragment : Fragment() {
         val button : Button = binding.moreImagesButton
 
 
-        //observable items
+        //Listening to observable items
         homeViewModel.text.observe(viewLifecycleOwner, {
             textView.text = it
         })
@@ -61,6 +61,7 @@ class HomeFragment : Fragment() {
             grid.adapter = gridAdapter
         })
 
+        //Grid interactivity
         grid.setOnItemClickListener { parent, view, position, id ->
             val intent = Intent(
                 context,

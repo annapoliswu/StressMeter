@@ -12,14 +12,15 @@ class HomeViewModel : ViewModel() {
     }
     val text: LiveData<String> = _text
 
+    //So gridNumber holds across orientation change
     var gridNumber = MutableLiveData<Int>().apply{
         value = 0
     }
 
+    // Cycles between the 3 grid numbers
     public fun incrementGridNumber(){
         gridNumber.value = gridNumber.value?.plus(1)?.mod(3)
     }
-
 
 
 
